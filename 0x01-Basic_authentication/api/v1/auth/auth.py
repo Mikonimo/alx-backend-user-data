@@ -15,7 +15,7 @@ class Auth:
         be the Flask request object"""
         return None
 
-    def current_user(self, request=None) -> TypeVar('User'): # type: ignore
+    def current_user(self, request=None) -> TypeVar('User'):  # type: ignore
         """Public that retuns None - request will be the
         Flask request object"""
         return None
