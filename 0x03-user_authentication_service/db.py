@@ -20,7 +20,7 @@ class DB:
         self.__session = None
 
     @property
-    def _session(self) -> None:
+    def _session(self) -> Session:
         """Memoized session object
         """
         if self.__session is None:
@@ -28,7 +28,7 @@ class DB:
             self.__session = DBSession()
         return self.__session
 
-    def add_user(email: str, hashed_password: str) -> User:
+    def add_user(self, email: str, hashed_password: str) -> User:
         """
         Adds a new user to the database
         Args:
