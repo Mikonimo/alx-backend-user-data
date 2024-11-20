@@ -60,7 +60,7 @@ class DB:
             InvalidRequestError: When wrong query arguments are passed.
         """
         try:
-            return self._session.query(User).filter_by(**kwargs).one()
+            return self._session.query(User).filter_by(**kwargs).first()
         except NoResultFound:
             raise NoResultFound("Not Found")
         except InvalidRequestError:
