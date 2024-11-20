@@ -47,11 +47,11 @@ class DB:
         self._session.commit()
         return new_user
 
-    def find_user_by(self, **kwargs: str) -> User:
+    def find_user_by(self, **kwargs) -> User:
         """
         Finds a user in the database using provided keyword arguments.
         Args:
-            **kwargs (str): Arbitrary keyword arguments for filtering
+            **kwargs: Arbitrary keyword arguments for filtering
                             the users table.
         Returns:
             User: The first user object that matches the filtering criteria.
