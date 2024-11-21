@@ -3,7 +3,7 @@
 from bcrypt import hashpw, gensalt, checkpw
 from db import DB
 from user import User
-from sqlalchemy.exc import NoResultFound
+from sqlalchemy.orm.exc import NoResultFound
 
 
 def _hash_password(password: str) -> bytes:
@@ -22,6 +22,7 @@ class Auth:
     """
 
     def __init__(self):
+        """DB Class Instance"""
         self._db = DB()
 
     def register_user(self, email: str, password: str) -> User:
